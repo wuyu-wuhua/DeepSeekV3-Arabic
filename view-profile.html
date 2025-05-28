@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف المستخدم - تجربة DeepSeek V3 المجانية</title>
+    <meta name="description" content="عرض ملف المستخدم الخاص بك لتجربة DeepSeek V3 المجانية.">
+    <link rel="canonical" href="https_YOUR_DOMAIN_COM/view-profile">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/制作图标.png">
+    <link rel="alternate" hreflang="ar" href="http://www.erohmed.com"/>
+
+    <!-- Styles previously inline are now expected to be in style.css or handled by general rules -->
+</head>
+<body>
+    <div id="vanta-bg"></div> <!-- Vanta background placeholder -->
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DeepSeek V3</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="login.html" class="nav-auth-link">تسجيل الدخول/التسجيل</a>
+                <a href="index.html" class="active">واجهة الدردشة</a>
+                <a href="feedback.html">ملاحظات المستخدم</a>
+            </nav>
+            <div class="chat-history">
+                <h3>سجل الدردشة</h3>
+                <ul id="history-list">
+                    <!-- 历史对话将通过JS动态添加 -->
+                    <li><a href="#">محادثة ١ - ميزات نموذج V3</a></li>
+                    <li><a href="#">محادثة ٢ - لعبة إيقاع الموسيقى</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="profile-page-container"> <!-- Renamed to avoid conflict if .container is too generic -->
+                <div class="profile-card">
+                    <h1 class="page-title">ملف المستخدم</h1> <!-- Added .page-title for consistent styling -->
+                    <div class="profile-avatar-container">
+                        <img id="userProfileAvatar" src="#" alt="الصورة الرمزية للمستخدم" class="profile-avatar" style="display:none;">
+                        <div id="userProfileAvatarText" class="profile-avatar-text" style="display:none;"></div>
+                    </div>
+                    <div class="profile-info">
+                        <p><strong>اسم المستخدم:</strong> <span id="userProfileName">-</span></p>
+                        <p><strong>البريد الإلكتروني:</strong> <span id="userProfileEmail">-</span></p>
+                    </div>
+                    <a href="index.html" class="profile-back-btn btn">العودة إلى الصفحة الرئيسية</a> <!-- Added .btn for general button styling -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p><a href="https://beian.miit.gov.cn" rel="nofollow">渝ICP备2023003099号</a> | اتصل بنا: <a href="mailto:ytsgabcde52@2925.com">ytsgabcde52@2925.com</a></p>
+        <hr class="footer-divider">
+        <p class="footer-ai-notice">تم إنشاء المحتوى بواسطة الذكاء الاصطناعي، ولا يمكن ضمان الدقة، للإشارة فقط. <a href="privacy.html">قواعد حماية المعلومات الشخصية</a></p>
+    </footer>
+
+    <div id="custom-pointer">👆</div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script> <!-- Changed to BIRDS -->
+    <script>
+        // Initialize Vanta.js BIRDS background
+        if (typeof VANTA !== "undefined" && typeof VANTA.BIRDS !== "undefined") {
+            VANTA.BIRDS({
+                el: "#vanta-bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                backgroundColor: 0xf5f5f5, // Light gray background
+                color1: 0x12a0b8,          // Example bird color
+                color2: 0x6ac04b,          // Example bird color
+                birdSize: 1.20,
+                quantity: 3.00
+            });
+        }
+
+        // Ensure elements for login UI updates and history exist or are handled gracefully
+        document.addEventListener('DOMContentLoaded', () => {
+            // Specific New Chat button for this page's sidebar
+            const newChatBtnSidebarProfile = document.getElementById('newChatBtnSidebarProfile');
+            if (newChatBtnSidebarProfile) {
+                newChatBtnSidebarProfile.addEventListener('click', () => {
+                    window.location.href = 'index.html';
+                });
+            }
+            // Populate history for this page (can use the same function if IDs match)
+            // For now, ensuring an ID is present for any potential script.js shared logic
+            const historyListProfile = document.getElementById('history-list-profile');
+            if (historyListProfile) {
+                // Placeholder or call a shared loadChatHistory function if adapted
+                // loadChatHistory(historyListProfile); // If you make loadChatHistory accept an element
+            }
+        });
+    </script>
+</body>
+</html> 
